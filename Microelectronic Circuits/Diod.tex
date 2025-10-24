@@ -1,0 +1,64 @@
+% !TeX program = xelatex
+\documentclass[12pt, a4paper]{article}
+\usepackage{amsmath}
+\usepackage{xeCJK}
+\usepackage{circuitikz}
+\usepackage{enumitem}
+
+\setmainfont{Latin Modern Roman}
+\setCJKmainfont{Noto Serif CJK TC}
+
+\title{Diod}
+
+\begin{document}
+\section*{二極體模型}
+\subsection*{指數函數模型疊代分析}
+	\begin{center}
+	\begin{circuitikz}
+		\draw(0,2) to[battery1, l=$V_{DD}$] (0,0);
+		\draw(0,2) to (1,2) to[R, l=$R$] (2,2) to[short, i^>=$I_D$] (3,2);
+		\draw(3,2) to (3,1.5) to[empty diode, l=$V_D$] (3,0.5) to (3,0);
+		\draw(3,0) to (0,0);
+	\end{circuitikz}
+	\end{center}
+
+上圖為二極體接上直流電源與電阻的示意圖，又我們可得知
+	\begin{align}
+		&I_{D} = I_{S}e^{V_{D}/V_{T}} \\
+		&I_{D} = \frac{V_{DD} - V_{D}} {R} \\
+		&V_2 = V_1 + V_T \ln \frac {I_2} {I_1}
+	\end{align}
+
+因此可以使用疊代分析來找出對應的 $V_D$ 與 $I_D$，步驟如下：
+	
+	\begin{center}
+	\begin{minipage}{0.6\textwidth}
+		\begin{enumerate}[label=Step. \arabic*:]
+			\item 先猜一組 $I_{D_{gus}}$, $V_{D_{gus}}$，通常題目會給
+			\item 將猜測的 $V_{D_{gus}}$ 代入(1)式可以得到$I_{D_1}$
+			\item 接著將$V_2 = V_{D_1}$, $V_1 = V_{D_gus}$, $I_2 = I_{D_gus}$, $I_1 = I_{D_1}$ 代入(3)式，求出 $V_{D_1}$
+			\item 重複2, 3步驟，將 $D_1$ 改紀成$D_2$ $D_3$... 以此類推直到獲取可接受的誤差
+		\end{enumerate}
+	\end{minipage}
+	\end{center}
+
+\subsection*{定電壓將模型 (Drop Voltage Model)}
+根據上方指數數模型疊代分析結果，二極體的 $V_D \approx 0.7$V，因此用$V_D < 0.7$V 視為斷路，$V_D >= 0.7$V 視為開路進行電路分析
+
+	\begin{center}
+	\begin{circuitikz}
+		\draw (0,0) to[short, o-] (2,0) to[short, -o] (2,-0.75);
+		\draw (2, -1.25) to[short, o-] (2,-2) to[short, -o] (0,-2);
+		\draw (1, -2.5) node{$V_D<0.7$};
+
+		\draw (5,0) to[short, o-] (7,0) to[battery1, l=$V_D$] (7,-2) to[short, -o] (5,-2);
+		\draw (6, -2.5) node{$V_D \geq 0.7$};
+	\end{circuitikz}
+	\end{center}
+\newpage
+
+\section*{齊納二極體 (Zener Diode)}	
+
+
+\end{document}
+
