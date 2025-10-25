@@ -8,6 +8,12 @@
 \usepackage{xcolor}
 \usepackage{parskip}
 \usepackage{enumitem}
+\usepackage{hyperref}
+
+\hypersetup{
+	colorlinks=false,
+	pdfborder={0,0,0}
+}
 
 
 \setmainfont{Latin Modern Roman}
@@ -122,19 +128,191 @@ Circulation of $\vec{A}$ around countour $C \triangleq \oint_C \vec{A} \text{d} 
 \begin{enumerate}[label=\textcircled{\arabic*}]
 	\item $\vec{A} \cdot$ force ($\vec{F}$) $\to \oint_C \vec{A} \text{d} \cdot \vec{l}$ :\quad  work
 	
-	\item $\vec{A}$; electrical field intensity $\to \oint_C \vec{A} \cdot \text{d} \vec{l}$ :\quad electromotive force
+	\item $\vec{A}$: electrical field intensity $\to \oint_C \vec{A} \cdot \text{d} \vec{l}$ :\quad electromotive force
 \end{enumerate}
 
 $\nabla \times \vec{A}$ (curl $\vec{A}$): a measure of strength of a vector source \\ 
 
 \textbf{magnitude:} The maximum net circulation of $\vec{A}$ per unit area as the area tends to zero. \\
-\textbf{direction:} The normal direction of the area when the area is oriented to make the net circulation maxium.
+\textbf{direction:} The normal direction of the area when the area is oriented to make the net circulation maxium. \\ 
+
+$$
+(\nabla \times \vec{A})_u = \hat{a_u} \cdot (\nabla \times \vec{A}) = \lim_{\Delta S_u \to 0} \frac{1}{\Delta S_u} (\oint_{C_u} \vec {A} \cdot \text{d} \vec{l})
+$$
+
+\begin{minipage}[t]{0.5 \textwidth}
+	In cartiesian coordinates:
+	$$
+  \nabla \times \vec{A} = \begin{vmatrix}
+		\hat{a_x} & \hat{a_y} & \hat{a_z} \\
+		\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ 
+		A_x & A_y & A_z
+	\end{vmatrix}
+	$$
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5 \textwidth}
+	In general:
+	$$
+  \nabla \times \vec{A} = \frac{1}{h_1 h_2 h_3} \begin{vmatrix}
+		\hat{a_{u_1} h_1} & \hat{a_{u_2} h_2} & \hat{a_{u_3} h_3} \\
+		\frac{\partial}{\partial u_1} & \frac{\partial}{\partial u_2} & \frac{\partial}{\partial u_3} \\ 
+		h_1 A_x & h_2 A_y & A_z
+	\end{vmatrix}
+	$$
+\end{minipage}
+\\ \\
+Next page has detail proof of above formula.
+\newpage
+
+
+Defined that $(\nabla \times \vec{A})$ is
+$$
+(\nabla \times \vec{A})_u = \hat{a_u} \cdot (\nabla \times \vec{A}) = \lim_{\Delta S_u \to 0} \frac{1}{\Delta S_u} (\oint_{C_u} \vec {A} \cdot \text{d} \vec{l})
+$$
+For $(\nabla \times \vec{A})$ in Cartiesian coordinates, the differential rectangular area is below.
+
+
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da07173645514972404] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (281.35,162.65) -- (279.67,231) ;
+%Straight Lines [id:da6326497744935679] 
+\draw    (196.33,185.67) -- (166.74,209.5) -- (146.56,225.75) ;
+\draw [shift={(145,227)}, rotate = 321.16] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da0789696871834551] 
+\draw    (196.33,185.67) -- (307.75,205.18) -- (339.03,210.66) ;
+\draw [shift={(341,211)}, rotate = 189.93] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8339732982001292] 
+\draw    (196.33,185.67) -- (195.68,99.67) ;
+\draw [shift={(195.67,97.67)}, rotate = 89.57] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da07535116275948683] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (166.74,209.5) -- (279.67,231) ;
+%Straight Lines [id:da22891962776065966] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (307.75,205.18) -- (279.67,231) ;
+%Flowchart: Process [id:dp46456426694433717] 
+\draw  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][fill={rgb, 255:red, 74; green, 144; blue, 226 }  ,fill opacity=0.39 ] (259.08,141.84) -- (304.97,149.11) -- (303.63,183.47) -- (257.73,176.19) -- cycle ;
+%Straight Lines [id:da03910636666006706] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (282.17,145.58) -- (286.67,143.08) ;
+%Straight Lines [id:da7511400679910567] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (286,149.08) -- (282.17,145.58) ;
+%Straight Lines [id:da0508381960589791] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (306.33,171.92) -- (304.17,168.25) ;
+%Straight Lines [id:da440029181301571] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (304.17,168.25) -- (301.5,171.42) ;
+%Straight Lines [id:da8256107974831526] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (276.62,179.07) -- (273.96,176.07) ;
+%Straight Lines [id:da767646697347278] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (273.35,181.87) -- (276.52,179.71) ;
+%Straight Lines [id:da4494212263565157] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (258.17,160.42) -- (255.83,157.08) ;
+%Straight Lines [id:da7462615231725471] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (260.5,158.25) -- (258.17,160.42) ;
+%Straight Lines [id:da6241975086374123] 
+\draw    (281.35,162.65) -- (262.95,173.03) ;
+\draw [shift={(260.33,174.5)}, rotate = 330.6] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Shape: Circle [id:dp7229223348289022] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (280.03,162.65) .. controls (280.03,161.92) and (280.62,161.33) .. (281.35,161.33) .. controls (282.08,161.33) and (282.67,161.92) .. (282.67,162.65) .. controls (282.67,163.38) and (282.08,163.97) .. (281.35,163.97) .. controls (280.62,163.97) and (280.03,163.38) .. (280.03,162.65) -- cycle ;
+%Straight Lines [id:da2526213850742248] 
+\draw    (259.2,139.9) -- (260,121.9) ;
+%Straight Lines [id:da7124781381730358] 
+\draw    (265.18,125.57) -- (301.22,130.03) ;
+\draw [shift={(304.2,130.4)}, rotate = 187.06] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (3.57,-1.72) -- (0,0) -- (3.57,1.72) -- cycle    ;
+\draw [shift={(262.2,125.2)}, rotate = 7.06] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (3.57,-1.72) -- (0,0) -- (3.57,1.72) -- cycle    ;
+%Straight Lines [id:da26957244315102435] 
+\draw    (305.2,146.1) -- (306.2,126.1) ;
+%Straight Lines [id:da2786844142809314] 
+\draw    (253.73,175.36) -- (233.03,172.01) ;
+%Straight Lines [id:da5076632123594157] 
+\draw    (239.53,168.37) -- (240.95,143.34) ;
+\draw [shift={(241.12,140.34)}, rotate = 93.24] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (3.57,-1.72) -- (0,0) -- (3.57,1.72) -- cycle    ;
+\draw [shift={(239.36,171.36)}, rotate = 273.24] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (3.57,-1.72) -- (0,0) -- (3.57,1.72) -- cycle    ;
+%Straight Lines [id:da5354624915318639] 
+\draw    (255.73,141.36) -- (236.82,138.27) ;
+%Curve Lines [id:da6836709006288629] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (281.35,162.65) .. controls (289.5,154.88) and (298.75,148.88) .. (324,153.13) ;
+
+% Text Node
+\draw  [draw opacity=0][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ]  (276.2,120.6) -- (293.2,120.6) -- (293.2,133.6) -- (276.2,133.6) -- cycle  ;
+\draw (279.2,125) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$\Delta y$};
+% Text Node
+\draw  [draw opacity=0][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ]  (231.36,148.45) -- (248.36,148.45) -- (248.36,161.45) -- (231.36,161.45) -- cycle  ;
+\draw (234.36,152.85) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$\Delta z$};
+% Text Node
+\draw (308,164.71) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {1};
+% Text Node
+\draw (281.14,137) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {2};
+% Text Node
+\draw (250,156.43) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {3};
+% Text Node
+\draw (273.56,182.74) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {4};
+% Text Node
+\draw (329.92,152.07) node [anchor=north west][inner sep=0.75pt]  [font=\tiny,color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ]  {$P( x_{0} ,\ y_{0} ,\ z_{0})$};
+% Text Node
+\draw (135.33,223.73) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$x$};
+% Text Node
+\draw (342,204.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$y$};
+% Text Node
+\draw (192,83.07) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$z$};
+% Text Node
+\draw (193,189.07) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$O$};
+\end{tikzpicture}
+\end{center}
+
+\begin{align*}
+	&\hat{a_u} = \hat{a_x}, \Delta S_u = \Delta y \Delta z, C_u \text{four sides 1,2,3,4} \\
+	&(\nabla \times \vec{A}) = \hat{a_x} \cdot (\nabla \times \vec{A}) = \lim_{\Delta y \Delta z \to 0} \frac{1}{\Delta y \Delta z} (\oint_{\substack{Sides \\ 1,2,3,4}} \vec{A} \cdot \text{d} \vec{l}) \\ 
+	&\vec{A} = \hat{a_x}A_x + \hat{a_y}A_y + \hat{a_z}A_z
+\end{align*}
+
+\textbf{For side1}: $\text{d} \vec{l} = \hat{a_z} \Delta z$, \quad $A_z(x_0, y_0 + \frac{\Delta y}{2}, z_0)$ \\
+$$
+	A \cdot \text{d} \vec{l} = (\hat{a_x}A_x + \hat{a_y}A_y + \hat{a_z}A_z) \cdot (\hat{a_z} \Delta z) = \Delta z A_z
+$$
+
+By Tylor series expanding, we have
+\begin{align*}
+	A_z(x_0, y_0 + \frac{\Delta y}{2}, z_0) 
+	= &A_z(x_0, y_0, z_0) + \left. \frac{\partial A_z}{\partial y} \right |_{(x_0, y_0, z_0)} (y_0+\frac{\Delta y}{2}-y_0) +\\
+	& \left. \frac{\partial^2 A_z}{\partial y^2} \right |_{(x_0, y_0, z_0)} (y_0 + \frac{\Delta y}{2} -y_0)^2 + \text{... H.O.T}
+\end{align*}
+\begin{align}
+	\int_{Side1} \vec{A} \cdot \text{d} \vec{l} = \{A_z(x_0, y_0, z_0) + \frac{\Delta y}{2} \left. \frac{a\partial A_z}{\partial y} \right |_{(x_0, y_0, z_0)} + \text{H.O.T}\} \Delta z
+\end{align}
+\\ \\
+
+\textbf{For side3}: $\text{d} \vec{l} = -\hat{a_z} \Delta z$, \quad $A_z(x_0, y_0 - \frac{\Delta y}{2}, z_0)$ \\
+$$
+	A \cdot \text{d} \vec{l} = (\hat{a_x}A_x + \hat{a_y}A_y + \hat{a_z}A_z) \cdot (-\hat{a_z} \Delta z) = -\Delta z A_z 
+$$
+
+\begin{align}
+	\int_{Side3} \vec{A} \cdot \text{d} \vec{l} = \{A_z(x_0, y_0, z_0) - \frac{\Delta y}{2} \left. \frac{a\partial A_z}{\partial y} \right |_{(x_0, y_0, z_0)} + \text{H.O.T}\} \Delta z
+\end{align}
+
+For $(1) + (2)$, we have
+$$
+\int_{\substack{\text{Sides} \\ \text{1 and 3}}} \vec{A} \cdot \text{d} \vec{l} = \left. (\frac{\partial A_z}{\partial y} + \text{H.O.T}) \right |_{(x_0, y_0, z_0)} \Delta y \Delta z
+$$
+Similarly,
+$$
+\int_{\substack{\text{Sides} \\ \text{2 and 4}}} \vec{A} \cdot \text{d} \vec{l} = \left. (-\frac{\partial A_y}{\partial z} + \text{H.O.T}) \right |_{(x_0, y_0, z_0)} \Delta y \Delta z
+$$
+Finally,
+\begin{align*}
+	&(\nabla \times \vec{A})_x = \frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z} \\
+	&\nabla \times \vec{A} = \hat{a_x}(\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z}) + \hat{a_y}(\frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x}) + \hat{a_z}(\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y})\\
+\end{align*}
+\newpage
+
 
 \subsection*{Stokes's Theorem}
 
 \begin{center}
-
-
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -229,6 +407,7 @@ $\oint_{C_j}$: bounded by a contour $C_j$
 
 
 \newpage
+\phantomsection\label{ex2-14}
 \textbf{Exercise 2-14}
 $$
 \vec{F} = \hat{a_x}xy - \hat{a_y}2x
@@ -343,9 +522,115 @@ $\nabla \times (\nabla V) \equiv 0$ the curl of the gradient of any scalar field
 	&\text{By Stokes's theorem, we have} \\
 	&\int_{s} (\nabla \times \vec{A}) \text{d} \vec{s} = \oint_{C} \vec {A} \cdot \text{d} \vec{l} \\
 	\because &(\nabla V) \cdot \text{d} \vec{l} = \text{d} = \text{d} v \\
-	\therefore &\oint_C \text{d} V = 0
+	\therefore &\oint_C \text{d} V = 0 \\
+	&\nabla \times (\nabla V) \text{面積分為 0} \\
+	&\nabla \times (\nabla V) = 0
 \end{align*}
 
+\subsection*{Identity \romannumeral2}
+$\nabla \cdot (\nabla \times \vec{A}) \equiv 0$: the divergence of the curl of any vector field is identically zero.
+\newpage
 
+\textbf{Exercise 2-16} \\
+$$
+\vec{F} = \hat{a_x}xy - \hat{a_y}2x
+$$
+Veriefy the Stokes's theorem
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Polygon Curved [id:ds02407968906442648] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=0.16 ] (89.67,108.33) .. controls (109.67,98.33) and (129,123) .. (156.33,97) .. controls (183.67,71) and (228.67,87.33) .. (230.33,126.33) .. controls (232,165.33) and (187,154.33) .. (136.33,150.33) .. controls (85.67,146.33) and (69.67,118.33) .. (89.67,108.33) -- cycle ;
+%Straight Lines [id:da23150186547280338] 
+\draw    (134.33,127) -- (133.69,66.33) ;
+\draw [shift={(133.67,64.33)}, rotate = 89.39] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da560950628707298] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (134.33,127) -- (102.66,71.4) ;
+\draw [shift={(101.67,69.67)}, rotate = 60.33] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8872557045790619] 
+\draw    (223.22,133.22) -- (230.33,126.33) ;
+%Straight Lines [id:da7034351428090797] 
+\draw    (230.33,126.33) -- (235.67,134.11) ;
+%Shape: Axis 2D [id:dp5560459976336004] 
+\draw  (334,153) -- (474,153)(347.67,28.67) -- (347.67,168.67) (467,148) -- (474,153) -- (467,158) (342.67,35.67) -- (347.67,28.67) -- (352.67,35.67)  ;
+%Shape: Arc [id:dp548460921370604] 
+\draw  [draw opacity=0] (347.67,83) .. controls (347.67,83) and (347.67,83) .. (347.67,83) .. controls (386.33,83) and (417.67,114.34) .. (417.67,153) -- (347.67,153) -- cycle ; \draw  [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ] (347.67,83) .. controls (347.67,83) and (347.67,83) .. (347.67,83) .. controls (386.33,83) and (417.67,114.34) .. (417.67,153) ;  
+%Straight Lines [id:da5563582787778145] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (347.67,83) -- (347.67,153) ;
+%Straight Lines [id:da663779790843842] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (347.67,153) -- (417.67,153) ;
+%Straight Lines [id:da32593798912107075] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (383.75,93.63) -- (388,100.88) ;
+%Straight Lines [id:da3581954407033726] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (383.75,93.63) -- (391.75,92.88) ;
+%Straight Lines [id:da8635416407668947] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (344.25,112.63) -- (347.67,118) ;
+%Straight Lines [id:da9827578661170833] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (347.67,118) -- (350.92,112) ;
+%Straight Lines [id:da37584167121294254] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (378,156.88) -- (382.67,153) ;
+%Straight Lines [id:da7626811673129976] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ]   (378.5,149.88) -- (382.67,153) ;
+%Straight Lines [id:da9263467270455434] 
+\draw    (347.67,153) -- (399,106.33) ;
+%Shape: Arc [id:dp2641779136900759] 
+\draw  [draw opacity=0] (370.31,133.32) .. controls (374.79,138.46) and (377.54,145.15) .. (377.66,152.48) -- (347.67,153) -- cycle ; \draw   (370.31,133.32) .. controls (374.79,138.46) and (377.54,145.15) .. (377.66,152.48) ;  
+
+% Text Node
+\draw (128,45.07) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\widehat{a_{n}}$};
+% Text Node
+\draw (92.67,52.07) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\widehat{a_{u}}$};
+% Text Node
+\draw (235.5,132.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\text{d}\vec{l}$};
+% Text Node
+\draw (415.14,155.57) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ] [align=left] {A (3,0)};
+% Text Node
+\draw (312,78.05) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 74; green, 144; blue, 226 }  ,opacity=1 ] [align=left] {B (0,3)};
+% Text Node
+\draw (309.05,156.43) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 0; green, 0; blue, 0 }  ,opacity=1 ] [align=left] {O (0,0)};
+% Text Node
+\draw (476.67,146.73) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$x$};
+% Text Node
+\draw (344.67,12.73) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$y$};
+% Text Node
+\draw (356.65,128.78) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,rotate=-316.01]  {$r=3$};
+% Text Node
+\draw (362.57,139.11) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$\phi $};
+\end{tikzpicture}
+
+\textbf{Sol.} \\
+$$
+  \nabla \times \vec{F} = \begin{vmatrix}
+		\hat{a_x} & \hat{a_y} & \hat{a_z} \\
+		\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ 
+		xy & -2x & 0
+	\end{vmatrix} = \hat{a_z} (-x-2) = - \hat{a_z} (x+2)
+$$
+Since $\text{d} \vec{s} = \hat{a_n} s = \hat{a_z} \text{d}x \text{d}y$, and $x^2 + y^2 = 9$; therefore,
+
+\begin{align*}
+\int_s (\nabla \times \vec{F}) \cdot \text{d} \vec{s} 
+&= \int_{0}^{3} \int_{0}^{\sqrt{9-y^2}} (\nabla \times \vec{F}) \cdot \hat{a_z} \text{d}x \text{d}y \\
+&= \int_{0}^{3} \int_{0}^{\sqrt{9-y^2}} -\hat{a_z} (x+2) \cdot \hat{a_z} \text{d}x \text{d}y \\
+&= - \int_{0}^{3} \int_{0}^{\sqrt{9-y^2}} (x+2) \text{d}x \text{d}y \\
+&= -\int_{0}^{3} \left. (\frac{1}{2}x^2 + 2x) \right |_{0}^{\sqrt{9-y^2}}\text{d}y \\
+&= -\int_{0}^{3} (\frac{1}{2} (9-y^2) + 2\sqrt{9-y^2}) \text{d}y \\
+&=-\left. [\frac{1}{2}(9y -\frac{1}{3}y^3) + y\sqrt{9-y^2} + 9\sin^{-1}\frac{y}{3} \right]_{0}^{3}
+&= -9(1 + \frac{\pi}{2})
+\end{align*}
+This equal to \hyperref[ex2-14]{\textbf{Exercise 2-14}}.
+\newpage
+\section*{Field classification and Helmholtz's theorem divergenceless field curl-free field}
+\textbf{Helmholtz's theorem}: A vector field is dtermined if both its divergence and its curl are specified everywhere.
+\begin{align*}
+	\nabla \cdot \vec{F} && \nabla \times {F}\\
+	0 && 0 \\
+	0 && \neq0 \\
+	\neq0 && 0 \\
+	\neq0 && \neq0 \\
+\end{align*}
 
 \end{document}
