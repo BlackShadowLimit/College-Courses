@@ -679,6 +679,90 @@ For periodic signals $x(t) = e^{j\omega_0 t}$
 $$
 e^{j\omega_0 t} \xrightarrow{F} 2\pi \delta(\omega - \omega_0)
 $$
+\textbf{\textit{Pf.}}
+\begin{align*}
+	x(t) &= \frac{1}{2\pi} \int_{-\infty}^{\infty} X(j\omega) e^{j\omega t}\text{d}\omega \\
+			 &= \frac{1}{2\pi} \int_{-\infty}^{\infty} 2\pi \delta(t) e^{j\omega t} \text{d} \omega \\
+			 &= \int_{-\infty}^{\infty} \delta(t) e^{j\omega t}\text{d} \omega \\
+			 &= e^{j\omega t}
+\end{align*}
+\newpage
+\subsection*{Properties}
+Linearity
+$$
+\alpha x(t) + \beta y(t) \xrightarrow{F} \alpha X(j\omega) + \beta Y(j\omega)
+$$
+Time shifting
+$$
+x(t-t_0) \xrightarrow{F} e^{-j\omega t_0}X(j\omega)
+$$
+Conjugation
+$$
+x^*(t) \xrightarrow{F} X^*(-j\omega)
+$$
+Conjugate symmetry
+$$
+X(-j\omega) = X^*(j\omega)
+$$
+If $x(t)$ is real, 我們可以用以下性質證出$e^{-a\left|t\right|} \xrightarrow{F} \frac{a}{a^2+\omega^2}$
+\begin{align*}
+	Ev \{x(t)\} &\longrightarrow \Re \{X(j\omega)\} \\
+	Od \{x(t)\} &\longrightarrow j\Im \{X(j\omega)\} \\
+	\because e^{-at}u(t)l &\xrightarrow{F} \frac{1}{a+j\omega} \\
+	\therefore e^{-a\left|t\right|} &= 2Ev \{e^{-at}u(t)\} \\
+	Ev \{e^{-at}u(t)\}&\xrightarrow{F} \Re \{\frac{1}{a+j\omega}\} = \frac{a}{a^2 - \omega^2} \\
+	\Rightarrow e^{-a\left|t\right|} &\xrightarrow{F} \frac{2a}{a^2 - \omega^2}
+\end{align*}
+Differentiation
+$$
+\frac{\text{d}x(t)}{\text{d}t} \xrightarrow{F} j\omega X(j\omega)
+$$
+Integration
+$$
+\int_{-\infty}^{t} x(\tau)\text{d}\tau \xrightarrow{F} \frac{1}{j\omega}X(j\omega) + \underbrace {\pi X(0) \delta(\omega)}_{\text{\color{red} dc term of integration}}
+$$
+Time scaling
+$$
+x(at) \xrightarrow{F} \frac{1}{\left|a\right|}X(\frac{j\omega}{a}) \\
+$$
+Parseval's relation
+$$
+\int_{-\infty}^{\infty} \left|x(t)\right|^2 \text{d}t = \frac{1}{2\pi} \int_{-\infty}^{\infty} \left|X(j\omega)\right|^2 \text{d} \omega
+$$
+\newpage
 
+\subsection*{Covolution property}
+The Fourier Transform of LTI system impulse response $h(t)$
+$$
+H(jk\omega_0 t) = \int_{-\infty}^{\infty} h(t) e^{-jk\omega_0t} \text{d}t
+$$
+If the outpus is $y(t)$ then
+$$
+Y(j\omega) = X(j\omega)H(j\omega)
+$$
+在 time domain 上做 convolution 會在 frequent domain 上做相乘
+$$
+x(t)*h(t) \xrightarrow{F} X(j\omega)H(j\omega)
+$$
+\subsection*{Multiplication property}
+在 time domain 上做相乘會在frequent domain 上做 convolution
+$$
+x(t)y(t) \xrightarrow{F} \frac{1}{2\pi}S(j\omega)*P(j\omega)
+$$
+\subsection*{Scalar in time domain}
+在 time domain 乘上變數會是 frequent domain 的微分
+$$
+tx(t) \xrightarrow{F} j\frac{\text{d}}{\text{d}\omega}X(j\omega)
+$$
+\subsection*{LCCDE(Linear constant coefficient DE)}
+System describe by differential equation
+$$
+\sum_{k=0}^{N}a_k\frac{\text{d}^ky(t)}{\text{d}t^k} = \sum_{k=0}^{M}b_k\frac{\text{d}^kx(t)}{\text{d}t^k}
+$$
+By Fourier transform
+\begin{align*}
+	\sum_{k=0}^{N}a_k(j\omega)^kY(j\omega) &= \sum_{k=0}^{M}b_k(j\omega)^kX(j\omega) \\ 
+	H(j\omega) = \frac{Y(j\omega)}{X(j\omega)} &= \frac{\sum_{k=0}^{M}b_k(j\omega)^k}{\sum_{k=0}^{N}a_k(j\omega)^k}
+\end{align*}
 
 \end{document}
