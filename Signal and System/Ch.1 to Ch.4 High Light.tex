@@ -565,7 +565,7 @@ $$
 \end{align*}
 
 \subsection*{Common fourier transform}
-For $\alpha>0$ $e^{-\alpha t}u(t)$
+For $\alpha>0$, $e^{-\alpha t}u(t)$
 $$
 x(t) = e^{-\alpha t}u(t) \xrightarrow{F} \frac{1}{\alpha + j\omega}
 $$
@@ -614,5 +614,71 @@ $$
 						 &= \frac{2 \sin(\omega T_1)}{\omega} = 2T_1 \frac{\sin(\omega T_1)}{\omega T_1} \\
 						 &= 2T_1 \operatorname{sinc}(\frac{\omega \pi}{\pi})
 \end{align*}
+\newpage
+\begin{minipage}[t]{0.5 \textwidth}
+	方波的 Inverse Fourier transform
+	$$
+  X(j\omega) = \begin{cases} 1, \quad \left| \omega \right| \leq W \\
+	0, else\end{cases}
+	$$
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3 \textwidth}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt      
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1, baseline=(current bounding box.north)]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Rectangle [id:dp28551682930557276] 
+\draw   (319.99,150.4) -- (360.66,150.4) -- (360.66,190.4) -- (319.99,190.4) -- cycle ;
+%Shape: Axis 2D [id:dp00630958994675257] 
+\draw  (266,190.27) -- (420.99,190.27)(340.38,101) -- (340.38,201) (413.99,185.27) -- (420.99,190.27) -- (413.99,195.27) (335.38,108) -- (340.38,101) -- (345.38,108)  ;
+
+% Text Node
+\draw (355.28,198.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$W$};
+% Text Node
+\draw (307.94,196.73) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$-W$};
+% Text Node
+\draw (332.94,81.4) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$X( j\omega )$};
+\end{tikzpicture}
+\end{minipage}
+$$
+X(j\omega) \xrightarrow{F} \frac{\sin(\omega t)}{\pi t} = \frac{W}{\pi} \operatorname{sinc}(\frac{\omega t}{\pi})
+$$
+\textbf{\textit{Pf.}}
+\begin{align*}
+	X(t) &= \frac{1}{2\pi}\int_{-\infty}^{\infty} X(j\omega) e^{j\omega t} \text{d}\omega \\
+			 &= \frac{1}{2\pi}\int_{-W}^{W}1 \cdot e^{j\omega t}\text{d}\omega\\
+			 &= \frac{1}{j2\pi t}\left( e^{jWt} - e^{-jWt} \right) \\
+			 &= \frac{\sin(Wt)}{\pi t} = \frac{W}{\pi}\operatorname{sinc}\frac{Wt}{\pi}
+\end{align*}
+
+
+
+sinc 波的長相
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt      
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Axis 2D [id:dp00630958994675257] 
+\draw  (225,191.27) -- (510.99,191.27)(362.25,102) -- (362.25,202) (503.99,186.27) -- (510.99,191.27) -- (503.99,196.27) (357.25,109) -- (362.25,102) -- (367.25,109)  ;
+%Shape: Wave [id:dp47979522902139027] 
+\draw   (325.99,187.71) .. controls (328.98,196.99) and (332,204) .. (335.35,204) .. controls (340.06,204) and (344.11,190.17) .. (348.35,175.64) .. controls (352.59,161.11) and (356.65,147.27) .. (361.35,147.27) .. controls (366.06,147.27) and (370.11,161.11) .. (374.35,175.64) .. controls (378.59,190.17) and (382.65,204) .. (387.35,204) .. controls (390.43,204) and (393.23,198.07) .. (395.99,189.9) ;
+%Shape: Wave [id:dp717311860093465] 
+\draw   (278.03,191.74) .. controls (281.23,197.25) and (284.43,201.67) .. (288.03,201.67) .. controls (292.55,201.67) and (296.45,194.66) .. (300.53,187.3) .. controls (304.6,179.94) and (308.5,172.94) .. (313.03,172.94) .. controls (317.55,172.94) and (321.45,179.94) .. (325.53,187.3) .. controls (325.68,187.59) and (325.84,187.87) .. (326,188.16) ;
+%Shape: Wave [id:dp528439810330457] 
+\draw   (230.36,193.79) .. controls (233.57,197.69) and (236.77,200.83) .. (240.36,200.83) .. controls (244.88,200.83) and (248.78,195.86) .. (252.86,190.64) .. controls (256.94,185.42) and (260.84,180.45) .. (265.36,180.45) .. controls (269.85,180.45) and (273.72,185.35) .. (277.77,190.52) ;
+%Shape: Wave [id:dp1416089494426117] 
+\draw   (444.08,194.57) .. controls (440.88,200.08) and (437.68,204.5) .. (434.08,204.5) .. controls (429.56,204.5) and (425.66,197.49) .. (421.58,190.14) .. controls (417.51,182.78) and (413.61,175.77) .. (409.08,175.77) .. controls (404.56,175.77) and (400.66,182.78) .. (396.58,190.14) .. controls (396.43,190.42) and (396.27,190.71) .. (396.11,190.99) ;
+%Shape: Wave [id:dp9189698618814189] 
+\draw   (491,197.87) .. controls (487.79,201.77) and (484.59,204.91) .. (481,204.91) .. controls (476.48,204.91) and (472.58,199.94) .. (468.5,194.72) .. controls (464.42,189.5) and (460.52,184.54) .. (456,184.54) .. controls (451.51,184.54) and (447.64,189.43) .. (443.59,194.61) ;
+\end{tikzpicture}
+\end{center}
+
+For periodic signals $x(t) = e^{j\omega_0 t}$
+$$
+e^{j\omega_0 t} \xrightarrow{F} 2\pi \delta(\omega - \omega_0)
+$$
+
 
 \end{document}
