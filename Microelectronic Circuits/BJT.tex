@@ -840,8 +840,8 @@ $v_{be} = v_{\pi}$
 計算 $A_v \equiv \frac{v_o}{v_i}$
 \begin{align*}
 	\because   v_i &= v_\pi \\
-	           v_o &= -g_m v_i (R_{\text{out}} || R_L) \\
-	\therefore A_v &= -g_m (R_{\text{out}} || R_L)
+	           v_o &= -g_m v_i (R_C || R_L) \\
+	\therefore A_v &= -g_m (R_C || R_L)
 \end{align*}
 
 計算 $G_v \equiv \frac{v_{\text{sig}}} {v_o}$
@@ -855,7 +855,7 @@ $v_{be} = v_{\pi}$
 	\begin{minipage}{0.6\textwidth}
 		\begin{enumerate}[label=\arabic*.]
 		  \item $\because R_{\text{in}} = r_{\pi} = \frac{\beta}{g_m}, \quad \therefore R_{\text{in}}$ 輸入阻抗沒有很高，理想的 Amp. 是$R_{\text{in}}$高; $R_{\text{out}}$低 \\
-			\item $A_v = \textcolor{red} - \textcolor{black} g_m (R_{\text{out}} || R_L)$, 相位差了$180^{\circ}$
+			\item $A_v = \textcolor{red} - \textcolor{black} g_m (R_C || R_L)$, 相位差了$180^{\circ}$
 		\end{enumerate}
 	\end{minipage}
 \end{center}
@@ -1073,8 +1073,8 @@ $v_{be} = v_{\pi}$
 \begin{align*}
 	\because v_{\pi} &= v_{be} \\ 
            	v_{be} &= -v_i \\
-	\therefore   v_o &= -g_m(-v_i) (R_{\text{out}} || R_L) \\
-							 A_v &= g_m (R_{\text{out}} || R_L)
+	\therefore   v_o &= -g_m(-v_i) (R_C || R_L) \\
+							 A_v &= g_m (R_C || R_L)
 \end{align*}
 
 計算 $G_v \equiv \frac{v_{\text{sig}}}{v_i}$
@@ -1087,12 +1087,319 @@ $v_{be} = v_{\pi}$
 	\begin{minipage}{0.6\textwidth}
 		\begin{enumerate}[label=\arabic*.]
 		  \item $\because R_{\text{in}} = r_e = \frac{\alpha}{g_m}, \quad \therefore R_{\text{in}}$ 輸入阻抗比 CE Amp. 還小 \\
-			\item $A_v = g_m(R_{\text{out}} || R_L)$, 沒有相位差
+			\item $A_v = g_m(R_C || R_L)$, 沒有相位差
 		\end{enumerate}
 	\end{minipage}
 \end{center}
 \newpage
 
+\subsection*{Common Collector (CC)}
+\begin{center}
+	
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da4133500324477516] 
+\draw    (83.94,67.64) -- (83.82,80.65) -- (83.86,91.14) -- (83.89,101.64) -- (83.94,115.14) ;
+%Straight Lines [id:da7830670584441963] 
+\draw    (83.82,80.65) -- (103.94,68.64) ;
+%Straight Lines [id:da30721918777675417] 
+\draw    (83.89,101.64) -- (102.94,116.64) ;
+%Straight Lines [id:da9997255942735996] 
+\draw    (57.95,91.14) -- (83.86,91.14) ;
+\draw [shift={(56.94,91.14)}, rotate = 359.99] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
+%Straight Lines [id:da43133315122711613] 
+\draw    (103.94,68.64) -- (104.36,37.17) ;
+\draw [shift={(104.37,36.16)}, rotate = 270.77] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
+%Straight Lines [id:da8942046760449994] 
+\draw    (102.94,116.64) -- (102.94,133.63) ;
+\draw [shift={(102.94,134.64)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
+%Straight Lines [id:da8684535561057921] 
+\draw    (102.94,134.64) -- (156.25,134.66) ;
+\draw [shift={(157.26,134.66)}, rotate = 0.02] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
+%Straight Lines [id:da45977051079735065] 
+\draw    (44.68,91.02) -- (56.94,91.14) ;
+%Shape: Circle [id:dp9764375079104787] 
+\draw   (8.39,111.7) .. controls (8.39,108.2) and (11.23,105.35) .. (14.74,105.35) .. controls (18.24,105.35) and (21.08,108.2) .. (21.08,111.7) .. controls (21.08,115.2) and (18.24,118.05) .. (14.74,118.05) .. controls (11.23,118.05) and (8.39,115.2) .. (8.39,111.7) -- cycle ;
+%Straight Lines [id:da3845153328683255] 
+\draw    (15.04,118.45) -- (15.04,145.75) ;
+%Straight Lines [id:da46423949264715025] 
+\draw    (9.83,148.68) -- (20.32,148.63) ;
+%Straight Lines [id:da5793601408315048] 
+\draw    (13.13,151.11) -- (16.79,151.06) ;
+%Straight Lines [id:da9878557919971883] 
+\draw    (6.18,146.25) -- (23.85,146.28) ;
+
+%Straight Lines [id:da5914914926844957] 
+\draw    (134.03,180.31) -- (144.52,180.26) ;
+%Straight Lines [id:da09483804649922112] 
+\draw    (137.33,182.75) -- (140.99,182.7) ;
+%Straight Lines [id:da5122315853274279] 
+\draw    (130.38,177.88) -- (148.05,177.91) ;
+
+%Straight Lines [id:da2938292496744518] 
+\draw    (104.37,36.16) -- (104.47,13) ;
+%Straight Lines [id:da20941830503677983] 
+\draw    (109.43,10.7) -- (98.95,10.84) ;
+%Straight Lines [id:da11007517241569709] 
+\draw    (106.12,8.3) -- (102.46,8.38) ;
+%Straight Lines [id:da6538432568343695] 
+\draw    (113.1,13.1) -- (95.44,13.22) ;
+
+%Right Arrow [id:dp979410899189834] 
+\draw   (188.67,89.59) -- (221.32,89.59) -- (221.32,85.79) -- (243.1,93.39) -- (221.32,101) -- (221.32,97.2) -- (188.67,97.2) -- cycle ;
+%Shape: Resistor [id:dp43577407497286336] 
+\draw   (352.62,99.8) -- (352.53,105.14) -- (354.95,106.37) -- (350.02,108.65) -- (354.87,111.11) -- (349.93,113.4) -- (354.78,115.85) -- (349.85,118.14) -- (354.7,120.6) -- (349.76,122.88) -- (352.19,124.11) -- (352.09,129.45) ;
+%Flowchart: Decision [id:dp33499331630798135] 
+\draw   (352.53,51.02) -- (361.33,60.08) -- (352.53,69.14) -- (343.73,60.08) -- cycle ;
+%Straight Lines [id:da29171091451254105] 
+\draw    (352.66,55.23) -- (352.81,63.98) ;
+\draw [shift={(352.84,65.98)}, rotate = 269.03] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+%Shape: Resistor [id:dp5073701885339131] 
+\draw   (15.04,91.45) -- (20.37,91.37) -- (21.52,88.9) -- (23.97,93.76) -- (26.27,88.84) -- (28.71,93.69) -- (31.01,88.77) -- (33.45,93.62) -- (35.75,88.7) -- (38.2,93.56) -- (39.35,91.09) -- (44.68,91.02) ;
+%Shape: Resistor [id:dp8922314605853572] 
+\draw   (139.8,134.67) -- (139.7,140) -- (142.13,141.23) -- (137.2,143.51) -- (142.04,145.97) -- (137.11,148.26) -- (141.96,150.72) -- (137.03,153) -- (141.88,155.46) -- (136.94,157.74) -- (139.37,158.97) -- (139.27,164.31) ;
+%Straight Lines [id:da20174931264036466] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (60.76,118.66) -- (60.76,99.16) -- (73.73,99) ;
+\draw [shift={(75.73,98.98)}, rotate = 179.28] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+%Straight Lines [id:da06096463918473072] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (127.79,106.28) -- (127.39,128.68) -- (113.39,129.03) ;
+\draw [shift={(111.39,129.08)}, rotate = 358.57] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+%Straight Lines [id:da47582021553536313] 
+\draw    (15.04,91.45) -- (14.98,105.08) ;
+%Straight Lines [id:da11149077541069974] 
+\draw    (139.27,164.31) -- (139.22,177.95) ;
+%Straight Lines [id:da656463587264936] 
+\draw    (352.53,87.14) -- (352.53,105.14) ;
+%Straight Lines [id:da6868937585095206] 
+\draw    (352.53,69.14) -- (352.53,87.14) ;
+%Straight Lines [id:da21303891052152724] 
+\draw    (352.53,33.02) -- (352.53,51.02) ;
+%Shape: Resistor [id:dp3835054351957381] 
+\draw   (378.24,72.66) -- (378.15,78) -- (380.57,79.23) -- (375.64,81.51) -- (380.49,83.97) -- (375.55,86.26) -- (380.4,88.72) -- (375.47,91) -- (380.32,93.46) -- (375.39,95.74) -- (377.81,96.97) -- (377.71,102.31) ;
+%Straight Lines [id:da3545075118783987] 
+\draw    (422.73,145.16) -- (406.24,145.16) -- (352.27,145.31) ;
+\draw [shift={(423.74,145.16)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
+%Straight Lines [id:da766555053311894] 
+\draw    (378.24,33.66) -- (378.24,72.66) ;
+%Straight Lines [id:da6700116222154002] 
+\draw    (399.86,178.28) -- (410.35,178.23) ;
+%Straight Lines [id:da8274222197981748] 
+\draw    (403.16,180.71) -- (406.82,180.66) ;
+%Straight Lines [id:da2892354184876509] 
+\draw    (396.22,175.85) -- (413.88,175.88) ;
+
+%Straight Lines [id:da7462409824382801] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (398.62,116.28) -- (398.22,138.68) -- (384.22,139.03) ;
+\draw [shift={(382.22,139.08)}, rotate = 358.57] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+%Straight Lines [id:da8652681052903215] 
+\draw    (352.53,32.01) -- (352.53,20.02) ;
+\draw [shift={(352.53,33.02)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
+%Straight Lines [id:da3379422722161718] 
+\draw    (357.6,17.2) -- (347.11,17.34) ;
+%Straight Lines [id:da768322576060915] 
+\draw    (354.28,14.8) -- (350.62,14.88) ;
+%Straight Lines [id:da133893825661608] 
+\draw    (361.27,19.6) -- (343.6,19.72) ;
+
+%Straight Lines [id:da28112724680041834] 
+\draw    (352.27,128.32) -- (352.27,145.31) ;
+\draw [shift={(352.27,127.31)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
+%Straight Lines [id:da9627475615385244] 
+\draw    (326.95,88.14) -- (352.86,88.14) ;
+\draw [shift={(325.94,88.14)}, rotate = 359.99] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
+%Straight Lines [id:da6186834699763751] 
+\draw    (313.68,88.02) -- (325.94,88.14) ;
+%Shape: Circle [id:dp5181398690438553] 
+\draw   (277.39,108.7) .. controls (277.39,105.2) and (280.23,102.35) .. (283.74,102.35) .. controls (287.24,102.35) and (290.08,105.2) .. (290.08,108.7) .. controls (290.08,112.2) and (287.24,115.05) .. (283.74,115.05) .. controls (280.23,115.05) and (277.39,112.2) .. (277.39,108.7) -- cycle ;
+%Straight Lines [id:da04657431463635331] 
+\draw    (284.04,115.45) -- (284.04,142.75) ;
+%Straight Lines [id:da8142161183769505] 
+\draw    (278.83,145.68) -- (289.32,145.63) ;
+%Straight Lines [id:da877292710926374] 
+\draw    (282.13,148.11) -- (285.79,148.06) ;
+%Straight Lines [id:da44875549029711104] 
+\draw    (275.18,143.25) -- (292.85,143.28) ;
+
+%Shape: Resistor [id:dp12916529069775295] 
+\draw   (284.04,88.45) -- (289.37,88.37) -- (290.52,85.9) -- (292.97,90.76) -- (295.27,85.84) -- (297.71,90.69) -- (300.01,85.77) -- (302.45,90.62) -- (304.75,85.7) -- (307.2,90.56) -- (308.35,88.09) -- (313.68,88.02) ;
+%Straight Lines [id:da38379183322404853] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (329.76,115.66) -- (329.76,96.16) -- (342.73,96) ;
+\draw [shift={(344.73,95.98)}, rotate = 179.28] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+%Straight Lines [id:da30040427243759915] 
+\draw    (284.04,88.45) -- (283.98,102.08) ;
+%Straight Lines [id:da8085278155959004] 
+\draw    (352.54,34.05) -- (378.24,33.66) ;
+%Straight Lines [id:da5464353478241558] 
+\draw    (377.71,102.31) -- (377.74,144.66) ;
+%Shape: Resistor [id:dp09379724547967105] 
+\draw   (406.24,145.16) -- (406.15,150.5) -- (408.57,151.73) -- (403.64,154.01) -- (408.49,156.47) -- (403.55,158.76) -- (408.4,161.22) -- (403.47,163.5) -- (408.32,165.96) -- (403.39,168.24) -- (405.81,169.47) -- (405.71,174.81) ;
+%Shape: Resistor [id:dp21604146155227455] 
+\draw   (241.62,217.8) -- (241.53,223.14) -- (243.95,224.37) -- (239.02,226.65) -- (243.87,229.11) -- (238.93,231.4) -- (243.78,233.85) -- (238.85,236.14) -- (243.7,238.6) -- (238.76,240.88) -- (241.19,242.11) -- (241.09,247.45) ;
+%Flowchart: Decision [id:dp387299846054486] 
+\draw   (241.53,169.02) -- (250.33,178.08) -- (241.53,187.14) -- (232.73,178.08) -- cycle ;
+%Straight Lines [id:da23960128480515996] 
+\draw    (241.66,173.23) -- (241.81,181.98) ;
+\draw [shift={(241.84,183.98)}, rotate = 269.03] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+%Straight Lines [id:da9930768193409091] 
+\draw    (241.53,205.14) -- (241.53,223.14) ;
+%Straight Lines [id:da0046373043587679685] 
+\draw    (241.53,187.14) -- (241.53,205.14) ;
+%Straight Lines [id:da13587219598838973] 
+\draw    (241.53,151.02) -- (241.53,169.02) ;
+%Shape: Resistor [id:dp6501423052665937] 
+\draw   (268.26,263.24) -- (268.16,268.57) -- (270.59,269.8) -- (265.65,272.09) -- (270.5,274.55) -- (265.57,276.83) -- (270.42,279.29) -- (265.48,281.57) -- (270.33,284.03) -- (265.4,286.32) -- (267.82,287.55) -- (267.73,292.88) ;
+%Straight Lines [id:da35409674511600076] 
+\draw    (311.73,263.16) -- (295.24,263.16) -- (241.27,263.31) ;
+\draw [shift={(312.74,263.16)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
+%Straight Lines [id:da8492371322998509] 
+\draw    (288.86,296.28) -- (299.35,296.23) ;
+%Straight Lines [id:da21425376588826528] 
+\draw    (292.16,298.71) -- (295.82,298.66) ;
+%Straight Lines [id:da7102945316890503] 
+\draw    (285.22,293.85) -- (302.88,293.88) ;
+
+%Straight Lines [id:da29941637686078526] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (287.62,234.28) -- (287.22,256.68) -- (273.22,257.03) ;
+\draw [shift={(271.22,257.08)}, rotate = 358.57] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+%Straight Lines [id:da1986736806718049] 
+\draw    (241.53,150.01) -- (241.53,138.02) ;
+\draw [shift={(241.53,151.02)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
+%Straight Lines [id:da4361751131395202] 
+\draw    (246.6,135.2) -- (236.11,135.34) ;
+%Straight Lines [id:da325670718409548] 
+\draw    (243.28,132.8) -- (239.62,132.88) ;
+%Straight Lines [id:da5880640652658853] 
+\draw    (250.27,137.6) -- (232.6,137.72) ;
+
+%Straight Lines [id:da4565706988043702] 
+\draw    (241.27,246.32) -- (241.27,263.31) ;
+\draw [shift={(241.27,245.31)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
+%Straight Lines [id:da9342338138030444] 
+\draw    (215.95,206.14) -- (241.86,206.14) ;
+\draw [shift={(214.94,206.14)}, rotate = 359.99] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
+%Straight Lines [id:da9547449697354166] 
+\draw    (202.68,206.02) -- (214.94,206.14) ;
+%Shape: Circle [id:dp8968296253605997] 
+\draw   (166.39,226.7) .. controls (166.39,223.2) and (169.23,220.35) .. (172.74,220.35) .. controls (176.24,220.35) and (179.08,223.2) .. (179.08,226.7) .. controls (179.08,230.2) and (176.24,233.05) .. (172.74,233.05) .. controls (169.23,233.05) and (166.39,230.2) .. (166.39,226.7) -- cycle ;
+%Straight Lines [id:da8955610240005476] 
+\draw    (173.04,233.45) -- (173.04,260.75) ;
+%Straight Lines [id:da5182675065936346] 
+\draw    (167.83,263.68) -- (178.32,263.63) ;
+%Straight Lines [id:da4732213137601031] 
+\draw    (171.13,266.11) -- (174.79,266.06) ;
+%Straight Lines [id:da6195072134501105] 
+\draw    (164.18,261.25) -- (181.85,261.28) ;
+
+%Shape: Resistor [id:dp3029249545726985] 
+\draw   (173.04,206.45) -- (178.37,206.37) -- (179.52,203.9) -- (181.97,208.76) -- (184.27,203.84) -- (186.71,208.69) -- (189.01,203.77) -- (191.45,208.62) -- (193.75,203.7) -- (196.2,208.56) -- (197.35,206.09) -- (202.68,206.02) ;
+%Straight Lines [id:da8945343820671074] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (218.76,233.66) -- (218.76,214.16) -- (231.73,214) ;
+\draw [shift={(233.73,213.98)}, rotate = 179.28] [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+%Straight Lines [id:da08295517977573585] 
+\draw    (173.04,206.45) -- (172.98,220.08) ;
+%Shape: Resistor [id:dp3690950789893612] 
+\draw   (295.24,263.16) -- (295.15,268.5) -- (297.57,269.73) -- (292.64,272.01) -- (297.49,274.47) -- (292.55,276.76) -- (297.4,279.22) -- (292.47,281.5) -- (297.32,283.96) -- (292.39,286.24) -- (294.81,287.47) -- (294.71,292.81) ;
+%Straight Lines [id:da4390238476139843] 
+\draw    (262.66,296.48) -- (273.15,296.43) ;
+%Straight Lines [id:da7782276316254176] 
+\draw    (265.96,298.91) -- (269.62,298.86) ;
+%Straight Lines [id:da4990687255417269] 
+\draw    (259.02,294.05) -- (276.68,294.08) ;
+
+%Right Arrow [id:dp8993377958648644] 
+\draw   (371.24,177.81) -- (343.13,194.44) -- (345.07,197.71) -- (322.46,202.25) -- (337.33,184.62) -- (339.26,187.89) -- (367.37,171.27) -- cycle ;
+
+% Text Node
+\draw (9.86,105.92) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$+$};
+% Text Node
+\draw (9.71,110.63) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$-$};
+% Text Node
+\draw (54.83,70.73) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$v_{i}$};
+% Text Node
+\draw (164.33,127.73) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$v_{o}$};
+% Text Node
+\draw (337.4,103.13) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$r_{e}$};
+% Text Node
+\draw (321.23,47.38) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$g_{m} v_{\pi }$};
+% Text Node
+\draw (21.32,69.86) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$R_{sig}$};
+% Text Node
+\draw (144.04,149.37) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$R_{L}$};
+% Text Node
+\draw (51.27,117.92) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$R_{in}$};
+% Text Node
+\draw (118.27,89.12) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$R_{out}$};
+% Text Node
+\draw (436.67,138.73) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$v_{o}$};
+% Text Node
+\draw (414.46,157.63) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$R_{L}$};
+% Text Node
+\draw (390.1,100.12) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$R_{out}$};
+% Text Node
+\draw (278.86,102.92) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$+$};
+% Text Node
+\draw (278.71,107.63) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$-$};
+% Text Node
+\draw (323.83,67.73) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$v_{i}$};
+% Text Node
+\draw (290.32,66.86) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$R_{sig}$};
+% Text Node
+\draw (320.27,114.92) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$R_{in}$};
+% Text Node
+\draw (386.2,71.46) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$r_{o}$};
+% Text Node
+\draw (226.4,221.13) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$r_{e}$};
+% Text Node
+\draw (210.23,165.38) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$g_{m} v_{\pi }$};
+% Text Node
+\draw (325.67,256.73) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$v_{o}$};
+% Text Node
+\draw (303.46,275.63) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$R_{L}$};
+% Text Node
+\draw (279.1,218.12) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$R_{out}$};
+% Text Node
+\draw (167.86,220.92) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$+$};
+% Text Node
+\draw (167.71,225.63) node [anchor=north west][inner sep=0.75pt]  [font=\tiny]  {$-$};
+% Text Node
+\draw (212.83,185.73) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$v_{i}$};
+% Text Node
+\draw (179.32,184.86) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$R_{sig}$};
+% Text Node
+\draw (209.27,232.92) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,color={rgb, 255:red, 208; green, 2; blue, 27 }  ,opacity=1 ]  {$R_{in}$};
+% Text Node
+\draw (253.2,271.46) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$r_{o}$};
+\end{tikzpicture}
+\end{center}
+計算$A_v \equiv \frac{v_o}{v_i}$
+\begin{align*}
+	\because v_o &= v_i \frac{r_o || R_L}{r_e + (r_o || R_L)} \\
+	\therefore A_v &= \frac{r_o || R_L}{r_e + (r_o || R_L)} \\
+	\text since \quad r_e &\ll r_o || R_L \\
+	\Rightarrow A_v &\approx 1
+\end{align*}
+
+計算 $G_v \equiv \frac{v_{\text{sig}}}{v_i}$
+\begin{align*}
+	v_i &= v_{\text{sig}} \frac{R_\text{in}}{R_{\text{in}} + R_{\text{sig}}} \\
+	R_{\text{in}} &= \frac{v_i}{(1/(1+ \beta))i_e}
+								= \frac{v_i}{(1/(1+\beta)) \frac{v_i}{r_e + (r_o || R_L)}}\\
+								&= (1+\beta)(r_e + r_o || R_L)
+\end{align*}
+\textbf{Summary of CE Amp. (It can be buffer Amp.)} \\
+\begin{center}
+	\begin{minipage}{0.6\textwidth}
+		\begin{enumerate}[label=\arabic*.]
+		  \item $R_{\text{in}} = (1+\beta)(r_e + r_o || R_L), R_{\text{in}}$ very high
+			\item $R_{\text{out}} = \frac{R_{\text{sig}}}{1+\beta}+r_e$ very low
+			\item $A_v \approx 1$
+		\end{enumerate}
+	\end{minipage}
+\end{center}
 
 
 \end{document}
