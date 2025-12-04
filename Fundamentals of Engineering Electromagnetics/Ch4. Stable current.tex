@@ -113,7 +113,7 @@ We can prove that by $C = \frac{Q}{V}$ and $R = \frac{V}{I}$
 \end{enumerate}
 \newpage
 
-\textbf{exercise 4-4} \\
+\textbf{Exercise 4-4} \\
 一個均勻厚度為$h$，導電率$\sigma$的導電材料具有一個扁平的環形墊圈的1/4的形狀，其內徑為$a$，外徑為$b$，如下圖所示。決定在二端點面間的電阻。 
 \begin{center}
 
@@ -177,4 +177,25 @@ We can prove that by $C = \frac{Q}{V}$ and $R = \frac{V}{I}$
 \draw (311.23,18.49) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize]  {$y$};
 \end{tikzpicture}
 \end{center}
+
+\textbf{\textit{Sol.}} \\
+選用柱座標系統,。接著定$\phi = 0$, $V = 0$，$\phi = \pi/2$, $V = V_0$。 \\
+因此為導電材料，故 $\rho_v = 0$，可以使用 Laplace eqation 來解電位。 \\
+柱座標的 Laplace equation 為
+$$
+\nabla^2 V = \frac{1}{r} \frac{\partial}{\partial r} \left(r\frac{\partial V}{\partial r} \right) + \frac{1}{r^2} \frac{\partial^2 V}{\partial \phi^2} + \frac{\partial^2 V}{\partial z^2}
+$$
+因為$V$只與$\phi$有關
+\begin{align*}
+	\Rightarrow & \frac{\text{d}^2 V}{\text{d} \phi^2} = 0 \\
+	\Rightarrow & V = C_1 \phi + C_2 \\
+\end{align*}
+將 $V(0) = 0$, $V(\pi/2) = V_0$ 的Boundary Condition 解出 $C_1 = 2V_0/\pi$, $C_2 = 0$
+接著利用 $\vec J = \sigma \vec E$ 求出 $\vec J$，進一步求得 $I$，最後 $R = V_0/I$
+\begin{align*}
+	\vec J = \sigma E = \sigma (-\nabla V) &= -\hat{a_\phi} \sigma \frac{\partial V}{r \partial \phi}a = -\hat{a_\phi} \frac{2 \pi V_0}{\pi r} \\
+	I = \int_s = \vec J \text{d} \vec s \int_{a}^{b} \vec J (-\hat{a_\phi})h \text{d}r &= \frac{2 \sigma V_0}{\pi} \int_{a}^{b} \frac{\text{d}r}{r} = \frac{2 \sigma V_0 h}{\pi} \ln \frac{b}{a} \\
+	R = \frac{V_0}{I} &= \frac{\pi}{2 \sigma h \ln b/a}
+\end{align*}
+
 \end{document}
