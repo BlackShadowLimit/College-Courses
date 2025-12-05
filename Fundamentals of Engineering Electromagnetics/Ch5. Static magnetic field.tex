@@ -174,4 +174,62 @@ $\vec A$: Vector magnetic potential $\quad \text{Wb}/\text{m}$
 \end{align*}
 Choose $\nabla \cdot \vec A = 0$ (Coulomb guage) (為了使上式最簡化故選等於零)
 
+\begin{align*}
+	\nabla^2 A &= -\mu_0 \vec J \text{:}\quad \text{vector Poisson's equation in Cartesian} \\
+	\because \nabla^2 A &= \hat{a_x} \nabla^2 A_x + \hat{a_y} \nabla^2 A_y + \hat{a_z} \nabla^2 A_z \\
+	-\mu_0 \vec J &= \hat{a_x}(-\mu_0 J_x) + \hat{a_y}(-\mu_0 J_y) + \hat{a_z}(-\mu_0 J_z) \\
+\end{align*}
+\\[-5em]
+\begin{align*}
+	\left.
+	\begin{aligned}
+		\nabla^2 A_x &= -\mu_0 J_x \\
+		\nabla^2 A_y &= -\mu_0 J_y \\
+		\nabla^2 A_z &= -\mu_0 J_z
+	\end{aligned}
+\right\}
+\quad
+\begin{aligned}
+	\nabla^2 V &= -\frac{\rho_v}{\epsilon_0} \\
+	V &= \frac{1}{4 \pi \epsilon_0} \int_{v'} \frac{\rho_v}{R} \text{d} v'
+\end{aligned}
+\end{align*}
+\\[-3em]
+\begin{align*}
+	A_x = \frac{\mu_0}{4 \pi} \int_{v'} \frac{J_x}{R} \text{d} v' \\
+	A_y = \frac{\mu_0}{4 \pi} \int_{v'} \frac{J_y}{R} \text{d} v' \\
+	A_z = \frac{\mu_0}{4 \pi} \int_{v'} \frac{J_z}{R} \text{d} v' \\
+\end{align*}
+\\[-5em]
+\begin{align*}
+	\vec A &= \hat{a_x} A_x + \hat{a_y} A_y + \hat{a_z} A_z \\
+				 &= \frac{\mu_0}{4 \pi} \int_{v'} \frac{\hat{a_x} J_x + \hat{a_y} J_y + \hat{a_z} J_z}{R} \text{d} v' \\
+				 &= \frac{\mu_0}{4 \pi} \int_{v'} \frac{\vec J}{R} \text{d} v' \quad (\text{Wb/m})
+\end{align*}
+magnetic flux:\\
+$$
+\phi = \int_s \vec B \cdot \text{d} \vec s = \int_s (\nabla \times \vec A) \cdot \text{d} \vec s = \oint_c \vec A \cdot \text{d} \vec l \quad (\text{Wb})
+$$
+\newpage
+
+\section*{The Biot-Savart law and applications}
+\begin{minipage}[t]{0.5\textwidth}
+\begin{align*}
+	\vec J \text{d} v' &= J s \text{d} \vec l = I \text{d} \vec l \\
+	\vec A &= \frac{\mu_0}{4 \pi} \int_{v'} \frac{\vec J}{R} \text{d} v' \\
+  \vec A &= \frac{\mu_0 I}{4 \pi} \oint_c' \frac{\text{d} \vec l'}{R} \\
+	\vec B &= \nabla \vec A = \nabla \times \left[\frac{\mu_0 I}{4 \pi} \oint_{c'} \frac{\text{d} \vec l'}{R}\right] \\
+				 &= \frac{\mu_0 I}{4 \pi} \oint_{c'} \nabla \times \frac{\text{d} \vec l'}{R}
+\end{align*}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+	\begin{align*}
+		\nabla \times(f \vec G) &= f \nabla \times \vec G + (\nabla f) \times \vec G\\
+		\Rightarrow \nabla \times (\frac{1}{R} \text{d} \vec l') &= \frac{1}{R} \nabla \times \text{d} \vec l' + (\nabla \frac{1}{R} \times \text{d} \vec l') \\
+		\therefore \vec B = \frac{\mu_0 I}{4 \pi} \oint_{c'} &\left[\frac{1}{R} \nabla \times \text{d} \vec l' + (\nabla \frac{1}{R} \times \text{d} \vec l')\right] \\
+		\nabla \frac{1}{R} = - \frac{1}{R^2} &\hat{a_R} \qquad \text{可能會考怎麼來的} \\
+		\vec B = \frac{\mu_0 I}{4 \pi} \oint_{c'} &(-\frac{1}{R^2} \hat{a_R}) \times \text{d} \vec l' \\
+		= \frac{\mu_0 I}{4 \pi} \oint_{c'} &\frac{\text{d} \vec l' \times \hat{a_R}}{R^2}
+		\end{align*}
+\end{minipage}
 \end{document}
