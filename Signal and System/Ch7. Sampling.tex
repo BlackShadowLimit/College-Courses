@@ -252,13 +252,13 @@ $X(j(\omega - k \omega_{s}))$ 會有重疊，訊號失真無法還原
 	\begin{enumerate}[label=\arabic*.]
 		\item $x(t)$ be a band-limited signal
 		\item $X(j \omega) = 0$ for $\left| \omega \right| > \omega_{M}$
-		\item $x_p(t)$ 復原成原本的 $x(t)$ 條件為 $\omega_{s} > 2 \pi / T$
+		\item $x_p(t)$ 復原成原本的 $x(t)$ 條件為 $\omega_{s} > 2 \omega_{M}$
 	\end{enumerate}
 \end{definitionbox}
 
 \section*{Reconstruction}
 \subsection*{Interpolation}
-常用的 reconstruction 方法，將取樣的點連呈直線，只要取樣法滿足 $\omega_{s} > 2 \pi / T$，連出來的直線會和原本連續訊號相似。
+常用的 reconstruction 方法，將取樣的點連呈直線，只要取樣法滿足 $\omega_{s} > 2 \omega_{M}$，直線段連接會和原本連續訊號相似。否則當 $\omega_{s} \ngtr 2 \omega_{M}$ 會 aliasing。
 
 \begin{center}
 	
@@ -314,6 +314,14 @@ $X(j(\omega - k \omega_{s}))$ 會有重疊，訊號失真無法還原
 \draw [shift={(430.82,166.14)}, rotate = 65.28] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.01, y radius= 2.01]   ;
 \end{tikzpicture}
 \end{center}
+
+\begin{tcolorbox}[colback=white, colframe=black, boxrule=0.8pt, arc=0pt, left=2pt, right=2pt, top=2pt, bottom=2pt]
+	\textbf{Shannon-Whittaker Sample Theorem} \\
+	If $\omega_{s} > 2 \omega_{0}$
+	$$
+	x(t) = \sum_{n = -\infty}^{\infty}x(nT) \mathrm{sinc} \left( \frac{t - nT}{T} \right), \quad \mathrm{sinc}(u) = \frac{\sin \pi u}{\pi u}
+	$$
+\end{tcolorbox}
 
 \end{document}
 
